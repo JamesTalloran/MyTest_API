@@ -14,4 +14,4 @@ app.use("/api", orderRoutes)
 
 app.get("/", (req, res) => {res.send("Welcome to Backend Delivery Project!")})
 app.use((req, res) => {res.status(404).send("Not found page!")})
-app.listen(9900, () => {console.log("Server running on port 9900!")})
+app.listen(process.env.PORT || 9900, () => {console.log("Server running on port 9900!")})
