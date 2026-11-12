@@ -1,5 +1,5 @@
 require("dotenv").config({ path: ".env"})
-import cors from 'cors'
+const cors = require("cors")
 const express = require("express")
 const authRoutes = require("./routes/authRoutes")
 const courierRoutes = require("./routes/courierRoutes")
