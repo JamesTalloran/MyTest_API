@@ -1,4 +1,5 @@
 require("dotenv").config({ path: ".env"})
+import cors from 'cors'
 const express = require("express")
 const authRoutes = require("./routes/authRoutes")
 const courierRoutes = require("./routes/courierRoutes")
@@ -7,6 +8,10 @@ const mongoDB = require("./config/db")
 const app = express()
 
 mongoDB()
+app.use(
+    cors({
+       origin: ["http://localhost:5173", "https://mytest-api.onrender.com"]
+    }))
 app.use(express.json())
 app.use("/api", authRoutes)
 app.use("/api", courierRoutes)
